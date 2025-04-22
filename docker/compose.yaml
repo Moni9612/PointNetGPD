@@ -1,0 +1,9 @@
+services:
+  point_net_gpd:
+    build:
+      dockerfile: Dockerfile
+    command: bin/bash
+    restart: unless-stopped
+    privileged: true
+    tty: true
+    network_mode: host
