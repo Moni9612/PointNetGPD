@@ -25,3 +25,4 @@ tensorboardx
 colorama
 click
 rich
+open3d

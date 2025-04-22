@@ -122,6 +122,7 @@ def main():
         ),
         batch_size=args.batch_size,
         num_workers=32,
+        num_samples=2,
         pin_memory=True,
         shuffle=True,
         worker_init_fn=worker_init_fn,

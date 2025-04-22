@@ -2,8 +2,19 @@ services:
   point_net_gpd:
     build:
       dockerfile: Dockerfile
-    command: bin/bash
+    command: ["python3", "main_1v.py", "--epoch", "200", "--mode", "train", "--batch-size", "16"]
     restart: unless-stopped
     privileged: true
     tty: true
     network_mode: host
+    volumes:
+      - type: bind
+        source: ../data
+        target: /home/code/PointNetGPD/data
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw    # GUI related
+    environment:
+      - PYTHONUNBUFFERED=1                # GUI related
+      - DISPLAY                           # GUI related
+      - QT_X11_NO_MITSHM=1                # GUI related
+      - NVIDIA_VISIBLE_DEVICES=all        # GUI related
+      - NVIDIA_DRIVER_CAPABILITIES=all    # GUI related

@@ -210,3 +210,5 @@ tags
 *.snm
 *.toc
 *.synctex.gz
+
+/data/ycb_grasp
