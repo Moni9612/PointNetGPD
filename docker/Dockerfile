@@ -12,6 +12,8 @@ RUN apt-get update && \
                                                git \
                                                build-essential
 
+RUN python3 -m pip install --no-cache-dir networkx==3.1
+
 RUN python3 -m pip install --no-cache-dir torch==2.4.1 \
                                           torchvision==0.19.1 \
                                           torchaudio==2.4.1 \
